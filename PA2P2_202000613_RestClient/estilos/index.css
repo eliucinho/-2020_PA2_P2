@@ -1,0 +1,76 @@
+*{
+    box-sizing: border-box;
+}
+
+.contenedor-principal{
+    display: flex;
+    flex-wrap: wrap;
+    background-color: brown;
+}
+
+.bloque{
+    flex:25%;
+    max-width: 25%;
+    background-color: burlywood;
+}
+
+.tarjeta-pokemon{
+    /*Sombra de la caja*/
+    -moz-box-shadow:inset 0px -2px 18px #000000;
+    -webkit-box-shadow:inset 0px -2px 18px #000000;
+    box-shadow:inset 0px -2px 18px #000000;
+
+    /*Border redondeados*/
+    border:none 3px #000000;
+    -moz-border-radius-topleft: 28px;
+    -moz-border-radius-topright:28px;
+    -moz-border-radius-bottomleft:28px;
+    -moz-border-radius-bottomright:28px;
+    -webkit-border-top-left-radius:28px;
+    -webkit-border-top-right-radius:28px;
+    -webkit-border-bottom-left-radius:28px;
+    -webkit-border-bottom-right-radius:28px;
+    border-top-left-radius:28px;
+    border-top-right-radius:28px;
+    border-bottom-left-radius:28px;
+    border-bottom-right-radius:28px;
+    /*margen y el padding*/
+    margin: 10px;
+    padding: 10px;
+}
+
+@media (max-width:900px){
+    .bloque{
+        flex:50%;
+        max-width: 50%;
+        background-color: darkorchid;
+    }
+}
+
+@media (max-width:500px){
+    .bloque{
+        flex:100%;
+        max-width: 100%;
+        background-color: greenyellow;
+    }
+}
+
+/*Animacion*/
+.tarjeta-pokemon {
+    transition:All 1.5024s ease;
+    -webkit-transition:All 1.5024s ease;
+    -moz-transition:All 1.5024s ease;
+    -o-transition:All 1.5024s ease;
+    transform: rotate(0deg) scale(1) skew(0deg) translate(10px);
+    -webkit-transform: rotate(0deg) scale(1) skew(0deg) translate(10px);
+    -moz-transform: rotate(0deg) scale(1) skew(0deg) translate(10px);
+    -o-transform: rotate(0deg) scale(1) skew(0deg) translate(10px);
+    -ms-transform: rotate(0deg) scale(1) skew(0deg) translate(10px);
+    }
+.tarjeta-pokemon:hover{
+    transform: rotate(0deg) scale(1) skew(0deg) translate(0px);
+    -webkit-transform: rotate(0deg) scale(1) skew(0deg) translate(0px);
+    -moz-transform: rotate(0deg) scale(1) skew(0deg) translate(0px);
+    -o-transform: rotate(0deg) scale(1) skew(0deg) translate(0px);
+    -ms-transform: rotate(0deg) scale(1) skew(0deg) translate(0px);
+    }
