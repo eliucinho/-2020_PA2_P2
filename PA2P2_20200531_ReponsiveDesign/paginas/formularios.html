@@ -1,0 +1,116 @@
+<html>
+
+<head>
+    <title>Mi primer html</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        nav {
+            background-color: yellow;
+            width: 80%;
+            height: 200px;
+            color: tomato;
+            font-size: x-large;
+        }
+    </style>
+
+    <link rel="stylesheet" href="../estilos/estilopa2.css">
+</head>
+
+<body>
+    <!-- Hola soy un comentario -->
+    <header style="background-color: blue;">
+        <h1>hola mundo</h1>
+    </header>
+    <nav>
+        <h1>navegacion</h1>
+        <a href="https://code.visualstudio.com/Download" target="_blank">
+            <p>Inicio</p>
+        </a>
+        <a href="paginas/contactos.html" target="_top">
+            <p>Contactos</p>
+        </a>
+        <a href="paginas/formularios.html">
+            <p>Formulario</p>
+        </a>
+        <a href="paginas/ejemploBootstrap.html">
+            <p>Ejemplo ejemploBootstrap</p>
+        </a>
+    </nav>
+    <main>
+        <h1>Formulario</h1>
+        <form action="contactos.html" method="POST">
+            <label for="txtId">Identidad: </label>
+            <input type="text" id="txtId" name="txtId" required>
+            <br>
+            <label for="txtContrasenia">Contraseña: </label>
+            <input type="password" id="txtContrasenia" name="txtContrasenia">
+            <br>
+            <label for="txtFecha">Fecha: </label>
+            <input type="date" id="txtFecha" name="txtFecha" value="2020-08-01">
+            <br>
+            <label for="chkPreferenciaHorario">Horario: </label>
+            <input type="checkbox" id="chkPreferenciaHorario" name="chkPreferenciaHorario" value="mañana">
+            <br>
+            <label for="optGenero">Genero: </label>
+            <input type="radio"  name="optGenero" value="masculino">masculino
+            <input type="radio"  name="optGenero" value="femenino">femenino<br>
+            <br>
+            <label for="lstDepartamento">Departamento: </label>
+            <select id="lstDepartamento" name="lstDepartamento">
+                <option value="08">Francisco Morazan</option>
+                <option value="12">La Paz</option>
+                <option value="01">Islas de la Bahia</option>
+            </select>
+            <br>
+            <label for="lstMunicipios">Municipios: </label>
+            <input list="datasetMunicipios">
+            <datalist id="datasetMunicipios">
+                <option value="Francisco Morazan"></option>
+                <option value="La Paz"></option>
+                <option value="Islas de la Bahia"></option>
+            </datalist>
+            <br>
+            <label for="lstPasatiempo">Pasatiempos: </label>
+            <select id="lstPasatiempo" name="lstPasatiempo" multiple>
+                <option value="PIN">Pintar</option>
+                <option value="PRO">Programar</option>
+                <option value="BAI">Bailar</option>
+            </select>
+            <br>
+            <label for="txtDescripcion">Descripción: </label>
+            <br>
+            <textarea id="txtDescripcion" name="txtDescripcion" rows="8" cols="40">
+
+            </textarea>
+            <br>
+            <input type="submit" value="enviar información">
+            <button type="reset">Limpiar formulario</button>
+            <button type="button" onclick="alert('hola pa2')">Saludar</button>
+        </form>
+    </main>
+    <aside>
+        <p>Lista Desordenada</p>
+        <ul>
+            <li>Item 1</li>
+            <li>Item 2</li>
+            <li>Item 3</li>
+            <li>Item 4</li>
+        </ul>
+        <p>Lista Ordenada</p>
+        <ol>
+            <li>Item 1</li>
+            <li>Item 2</li>
+            <li>Item 3</li>
+            <li>Item 4</li>
+        </ol>
+    </aside>
+    <footer>
+        <p>pie de pagina</p>
+        <a href="paginas/programador.html">
+            <p>Visitar programador</p>
+        </a>
+    </footer>
+</body>
+
+
+</html>
