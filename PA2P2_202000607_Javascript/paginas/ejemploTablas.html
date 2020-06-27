@@ -1,0 +1,87 @@
+<html>
+
+<head>
+    <title>Mi primer html</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        nav {
+            background-color: yellow;
+            width: 80%;
+            height: 200px;
+            color: tomato;
+            font-size: x-large;
+        }
+
+        table{
+            background-color: white;
+
+        }
+        /*Nota: las clases en css se identifican con un punto y los id con un numeral*/
+        .trEncabezado{
+            background-color: black;
+            color:white;
+        }
+
+        #tdMaria{
+            background-color: red;
+            color:white;
+        }
+
+        #trLuis{
+            background-color: yellow;
+            color:black;
+        }
+    </style>
+
+    <link rel="stylesheet" href="../estilos/estilopa2.css">
+    <script src="../js/ejemploJavaScript.js">
+
+    </script>
+</head>
+
+<body>
+    <!-- Hola soy un comentario -->
+    <header style="background-color: blue;">
+        <h1>hola mundo</h1>
+    </header>
+    <nav>
+        <h1>navegacion</h1>
+        <a href="../index.html" >
+            <p>Inicio</p>
+        </a>
+    </nav>
+    <main>
+        <h1>contenido principal</h1>
+        <table border="1px">
+            <thead>
+                <tr class="trEncabezado"><th>id</th><th>nombre</th><th>apellido</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>id</td><td>nombre</td><td>apellido</td></tr>
+                <tr><td>0801</td><td>eliud</td><td>varela</td></tr>
+                <tr><td>0802</td><td id="tdMaria">maria</td><td>aguilar</td></tr>
+                <tr><td>0803</td><td>juan</td><td>perez</td></tr>
+                <tr><td>0804</td><td>pedro</td><td>chavarria</td></tr>
+                <tr id="trLuis"><td>0805</td><td>luis</td><td>membreño</td></tr>
+                <tr><td>0806</td><td>gustavo</td><td>ortez</td></tr>
+            </tbody>
+
+        </table>
+        
+    </main>
+    <aside>
+        <p>Lista Desordenada</p>
+        <ul>
+            <li>Item 1</li>
+        </ul>
+    </aside>
+    <footer>
+        <p>pie de pagina</p>
+        <a href="paginas/programador.html">
+            <p>Visitar programador</p>
+        </a>
+    </footer>
+</body>
+
+
+</html>

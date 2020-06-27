@@ -1,0 +1,56 @@
+*{
+    box-sizing: border-box;
+}
+
+nav {
+    background-color: red;
+    width: 80%;
+    height: 200px;
+     color: yellow;
+     font-size: x-small;
+}
+
+nav a {
+    background-color: cyan;
+    width: 200px;
+    display: block;
+}
+
+nav :hover {
+    background-color:darkblue;
+    color: white;
+    width: 200px;
+    display: block;
+}
+
+main{
+    background-color: chocolate;
+}
+aside{
+    background-color: fuchsia;
+   
+}
+footer{
+    background-color:green;
+    clear: both;
+}
+/*
+    Dando forma a la pagina
+*/
+nav, main, aside{
+    float: left;
+    width: 33.33%;
+}
+
+img{
+    opacity: 0.5;
+}
+
+@media only screen and (max-width:600px){
+    nav, main, aside{
+        width: 100%;
+    }
+    aside{
+        display: none;
+    }
+}

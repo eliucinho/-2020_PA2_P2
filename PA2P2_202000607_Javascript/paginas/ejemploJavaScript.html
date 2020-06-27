@@ -1,0 +1,73 @@
+<html>
+
+<head>
+    <title>Mi primer html</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        nav {
+            background-color: yellow;
+            width: 80%;
+            height: 200px;
+            color: tomato;
+            font-size: x-large;
+        }
+    </style>
+
+    <link rel="stylesheet" href="../estilos/estilopa2.css">
+    <script src="../js/ejemploJavaScript.js">
+
+    </script>
+</head>
+
+<body>
+    <!-- Hola soy un comentario -->
+    <header style="background-color: blue;">
+        <h1>hola mundo</h1>
+    </header>
+    <nav>
+        <h1>navegacion</h1>
+        <a href="../index.html" >
+            <p>Inicio</p>
+        </a>
+    </nav>
+    <main>
+        <p>contenido principal</p>
+        <form name="formularioCalculos" onsubmit="validadorFormualario()"> 
+            <div id="mensajesError" style="color: red;"></div>
+            <div id="mensajesExito" style="color: green;"></div>
+            <br>
+            valor a:
+            <input type="number" id="a" name="a" >
+            <br>
+            valor b:
+            <input type="number" id="b" name="b" >
+            <br>
+            valor resultado:
+            <input type="number" id="resultado" name="resultado" value="getResultadoAAndB()">
+            <br>
+            <button id="sumar" onclick="calcularFormularioSuma()" ondblclick="alert('hola doble click')" >Sumar</button>
+        </form>
+        <img src="../imagenes/pensante.png" style="height: 100px;" alt="un emojji" id="imagenCarita">
+        <button onclick="cambiarImagenCarita()">cambiar imagen</button>
+        <div id="portalInyeccion"></div>
+        <button onclick="inyectarImagen()">inyectar etiqueta imagen</button>
+    </main>
+    <aside>
+        <p>Lista Desordenada</p>
+        <ul>
+            <li>Item 1</li>
+            <li>Item 2</li>
+            <li>Item 3</li>
+            <li>Item 4</li>
+        </ul>
+    </aside>
+    <footer>
+        <p>pie de pagina</p>
+        <a href="paginas/programador.html">
+            <p>Visitar programador</p>
+        </a>
+    </footer>
+</body>
+
+
+</html>
