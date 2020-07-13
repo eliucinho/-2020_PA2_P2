@@ -49,6 +49,15 @@ public class Vehiculos implements Serializable {
         this.placa = placa;
     }
 
+    public Vehiculos(String placa, String marca, String modelo, Integer idDuenio) {
+        this.placa = placa;
+        this.marca = marca;
+        this.modelo = modelo;
+        this.idDuenio = idDuenio;
+    }
+
+    
+    
     public String getPlaca() {
         return placa;
     }

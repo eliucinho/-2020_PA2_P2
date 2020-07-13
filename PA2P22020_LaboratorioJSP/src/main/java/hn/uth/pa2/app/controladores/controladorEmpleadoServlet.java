@@ -5,10 +5,11 @@
  */
 package hn.uth.pa2.app.controladores;
 
-import hn.uth.pa2.app.entidades.Vehiculos;
-import hn.uth.pa2.app.repositorios.VehiculoRepositorio;
+import hn.uth.pa2.app.entidades.Empleado;
+import hn.uth.pa2.app.repositorios.EmpleadoRepositorio;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.Comparator;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.servlet.RequestDispatcher;
@@ -22,8 +23,8 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author pccinho
  */
-@WebServlet(name = "controladorPrincipal", urlPatterns = {"/controladorPrincipal"})
-public class controladorPrincipal extends HttpServlet {
+@WebServlet(name = "controladorEmpleadoServlet", urlPatterns = {"/controladorEmpleadoServlet"})
+public class controladorEmpleadoServlet extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -36,66 +37,29 @@ public class controladorPrincipal extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        String nombre=request.getParameter("nombre");
+        String apellido=request.getParameter("apellido");
+        
+        EmpleadoRepositorio er=new EmpleadoRepositorio();
+        int secuencia = -2;
+       
+        
         try {
-            String accion = request.getParameter("accion");
-            String placa = request.getParameter("placa");
-            String marca = request.getParameter("marca");
-            String modelo = request.getParameter("modelo");
-            String duenio = request.getParameter("duenio");
-
-            Vehiculos vehiculoDTO = getVehiculosDTO(placa, marca, modelo, duenio);
-
-            if (accion.equals(servletConfiguracion.ACCION_NUEVO)) {
-                VehiculoRepositorio vr = new VehiculoRepositorio();
-                vr.crear(vehiculoDTO);
-
-                ir(request, response, "index.jsp");
-            }
+            secuencia = er.getSecuencia();
+            Empleado empleadoNuevo=new Empleado(secuencia, nombre, apellido);
+            er.crear(empleadoNuevo);
             
-            if (accion.equals(servletConfiguracion.ACCION_CONSULTAR)) {
-
-                VehiculoRepositorio vr = new VehiculoRepositorio();
-                Vehiculos vehiculoConsultado = vr.buscar(vehiculoDTO.getPlaca());
-                request.getSession().setAttribute("vehiculo", vehiculoConsultado);
-                //request.getSession().setAttribute("codigoError", 0);
-                //request.getSession().setAttribute("mensajeError", "Error al generar registro");
-                ir(request, response, "paginas/consultaVehiculo.jsp");
-            }
-            if (accion.equals(servletConfiguracion.ACCION_ELIMINAR)) {
-
-                VehiculoRepositorio vr = new VehiculoRepositorio();
-                vr.eliminar(vehiculoDTO);
-
-                ir(request, response, "index.jsp");
-            }
-            if (accion.equals(servletConfiguracion.ACCION_ACTUALIZAR)) {
-
-                VehiculoRepositorio vr = new VehiculoRepositorio();
-                vr.actualizar(vehiculoDTO);
-                request.getSession().setAttribute("vehiculo", vehiculoDTO);
-                ir(request, response, "paginas/consultaVehiculo.jsp");
-            }
+            request.setAttribute("empleado", empleadoNuevo);
         } catch (Exception ex) {
-            //Logger.getLogger(controladorPrincipal.class.getName()).log(Level.SEVERE, null, ex);
-            ex.printStackTrace();
+            Logger.getLogger(controladorEmpleadoServlet.class.getName()).log(Level.SEVERE, null, ex);
         }
+        
+        ir(request, response, "paginas/consultaEmpleado.jsp");
     }
-
-    private Vehiculos getVehiculosDTO(String placa, String marca, String modelo, String duenio) {
-        Vehiculos vehiculoDTO = new Vehiculos(placa,marca,modelo,(duenio!=null?Integer.parseInt(duenio):null));
-        /*vehiculoDTO.setMarca(marca);
-        vehiculoDTO.setModelo(modelo);
-        if (duenio!=null) {
-            vehiculoDTO.setIdDuenio(Integer.parseInt(duenio));
-        }*/
-        return vehiculoDTO;
-    }
-
     private void ir(HttpServletRequest request, HttpServletResponse response, String url) throws ServletException, IOException {
         RequestDispatcher despachador = request.getRequestDispatcher(url);
         despachador.forward(request, response);
     }
-
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
      * Handles the HTTP <code>GET</code> method.
