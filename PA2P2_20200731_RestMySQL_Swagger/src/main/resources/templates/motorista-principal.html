@@ -1,0 +1,31 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>TODO supply a title</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    </head>
+    <body>
+        <div>Aplicación de Motoristas/div>
+            <table border="1">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Identidad</th>
+                        <th>Nombres</th>
+                        <th>Apellidos</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr th:each="motorista : ${listaMotorista}">
+                        <td th:text="${motorista.id}"></td>
+                        <td th:text="${motorista.identidad}"></td>
+                        <td th:text="${motorista.nombres}"></td>
+                        <td th:text="${motorista.apellidos}"></td>
+                    </tr>
+                </tbody>
+            </table>
+
+    </body>
+</html>
