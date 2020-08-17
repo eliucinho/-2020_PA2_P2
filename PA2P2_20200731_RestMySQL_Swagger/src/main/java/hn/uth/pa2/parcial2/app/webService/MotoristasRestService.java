@@ -21,7 +21,7 @@ import org.springframework.web.bind.annotation.RestController;
  * @author uth
  */
 @RestController
-@RequestMapping(path = "/motoristas")
+@RequestMapping(path = "/api/motoristas")
 @CrossOrigin("*")
 public class MotoristasRestService {
     @Autowired
