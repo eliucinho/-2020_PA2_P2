@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-DemoCrudApplication<PA2P2_20200816_SpringThymeleaf>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "mainClass": "hn.uth.pa2.parcial3.app.DemoCrudApplication",
+            "projectName": "PA2P2_20200816_SpringThymeleaf",
+            "args": ""
+        }
+    ]
+}
